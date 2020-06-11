@@ -632,6 +632,8 @@ class CycleTransformer(Transformer):
         return copy
 
 
+@register
+@generate.register
 class BayesianTargetEncoder(Transformer):
     '''Encode categorical variables with a Bayesian Target Encoder.
 
@@ -701,6 +703,9 @@ class BayesianTargetEncoder(Transformer):
                                            allow_missing=True)
         return copy
 
+
+@register
+@generate.register
 class WeightOfEvidenceEncoder(Transformer):
     '''Encode categorical variables with a Weight of Evidence Encoder.
 
@@ -776,6 +781,9 @@ class WeightOfEvidenceEncoder(Transformer):
 
         return copy
 
+
+@register
+@generate.register
 class GroupByTransformer(Transformer):
     '''The GroupByTransformer creates aggregations via the groupby operation, which are
     joined to a DataFrame. This is useful for creating aggregate features.
@@ -802,6 +810,7 @@ class GroupByTransformer(Transformer):
       3  mouse    5  --       --
     '''
 
+    snake_name = 'groupby_transformer'
     by = traitlets.Unicode(allow_none=False, help='The feature on which to do the grouping.')
     agg = traitlets.Dict(help='Dict where the keys are feature names and the values are vaex.agg objects.')
     rprefix = traitlets.Unicode(default_value='', help='Prefix for the names of the aggregate features in case of a collision.')
