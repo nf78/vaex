@@ -1,6 +1,10 @@
 # vaex 3.1.0 (unreleased)
 
-# vaex-core 2.0.3 (unreleased)
+## vaex-ml 0.11.0-dev0 (unreleased)
+    * Features
+      * Autogenerate the fast (or functional) API [#512](https://github.com/vaexio/vaex/pull/512)
+
+# vaex-core 2.0.3 (2020-6-10)
    * Performance
       * isin uses hashmaps, leading to a 2x-4x performance increase for primitives, 200x for strings in some cases [#822](https://github.com/vaexio/vaex/pull/822)
 
